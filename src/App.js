@@ -7,9 +7,9 @@ import RxjsSecond from './components/RxjsSecond';
 function App() {
   return (
     <div className="App">
-      {/* <FirstForm /> */}
-      <Rxjs />
-      <RxjsSecond />
+      <FirstForm />
+      {/* <Rxjs /> */}
+      {/* <RxjsSecond /> */}
     </div>
   );
 }

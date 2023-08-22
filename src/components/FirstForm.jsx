@@ -8,29 +8,27 @@ export default function FirstForm() {
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors }
     } = useForm();
 
-    const mainFun = (data) => {
+    const onSubmit = (data) => {
         console.log(data);
     };
 
-    console.log(watch("example"));
 
     return (
         <Container className="border border-black py-2">
             <h1 className="text-center">Student From</h1>
-            <form onSubmit={handleSubmit(mainFun())}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <Row className="my-2">
                     <Col xs={6} className="my-2">
                         <Label htmlFor="firstName">First Name</Label>
-                        <Input id='firstName' defaultValue="" {...register("firstName", { required: true })} />
+                        <input className="form-control" id='firstName' defaultValue="" {...register("firstName", { required: true })} />
                         {errors.firstName && <p>This field is required</p>}
                     </Col>
                     <Col xs={6} className="my-2">
                         <Label htmlFor="lastName">Last Name</Label>
-                        <Input {...register("lastName", { required: true })} />
+                        <input className="form-control"  {...register("lastName", { required: true })} />
                         {errors.lastName && <p>This field is required</p>}
                     </Col>
                 </Row>

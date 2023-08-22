@@ -7,9 +7,11 @@ const Rxjs = () => {
         console.log(val)
         setvalue(val)
     })
+
     const addData = () => {
         data.next(value + 1)
     }
+    
     return (
         <>
             <div>{value}</div>
